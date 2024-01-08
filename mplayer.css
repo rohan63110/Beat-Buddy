@@ -1,0 +1,350 @@
+/* ================================= Fonts ========================= */
+  @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dosis:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --btn-color: #86898c;
+    --font-family1: 'Dosis', sans-serif;
+    --font-family2:'Courgette', cursive;
+    --background-color1: #a5c6f6;
+    --background-color2: #e0eafc;
+    --background-image1: linear-gradient(to right, #a5c6f6 0%, #4e8be6 100%);
+}
+body {
+    background-color: var(--background-color1);
+}
+/* ======================== wrapper container ======================= */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh; 
+}
+.wrapper-play {
+    background-color: var(--background-color2);
+    width: 90%;
+    border-radius: 55px;
+    box-shadow: 0px 0px 10px #dee8f9,
+        0px 0px 10px #e2ecff;
+    max-width: 290px;
+    text-align: center;
+    padding: 1rem;
+    overflow: hidden;
+    position: relative; 
+}
+header {
+    padding-top: 0.6rem;
+}
+header,
+.song-timer,
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+header .headbtn {
+    border-radius: 153px;
+    background: var(--background-color2);
+    box-shadow: 10px 10px 10px #d5deef,
+        -10px -10px 10px #ebf6ff;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    color: var(--btn-color);
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.headbtn:active {
+    border-radius: 153px;
+    background: linear-gradient(145deg, #f0faff, #cad3e3);
+    box-shadow: 10px 10px 7px #d5deef,
+        -10px -10px 7px #ebf6ff;
+}
+header h3 {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family:var(--font-family2);
+    font-weight: 500;
+    color: var(--btn-color);
+}
+.player {
+    margin-top: 1.6rem;
+    padding-bottom: 0.9rem;
+}
+img {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1.2rem;
+    object-fit: cover;
+    border: 6px solid #bcc9e2;
+    box-shadow: 10px 10px 7px #d5deef,
+        -10px -10px 7px #ebf6ff;
+    border-radius: 50%;
+}
+.name {
+    font-family: var(--font-family2);
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--btn-color);  
+}
+.artists {
+    color: #A7A9AB;
+    font-family: var(--font-family1);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 10px 0 20px;
+}
+.audio-c {
+    margin: 15px 0px 10px 0px;
+}
+.song-timer span {
+    font-size: 14px;
+    color: #7c7d80;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+/* =============================== Progress bar ========================= */
+.progress-area {
+    height: 9px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 50px;
+    background-color: #c6d5f0;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+}
+.progressbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-image: var(--background-image1);
+    border-radius: 0.5rem;
+}
+.progressbar::before {
+    content: "";
+    position: absolute;
+    background-color: #c6d5f0;
+    border-radius: 50%;
+    top: 50%;
+    right: -11px;
+    z-index: 2;
+    width: 19px;
+    height: 19px;
+    outline: none;
+    border: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+.progressbar::after {
+    content: "";
+    position: absolute;
+    background-image: var(--background-image1);
+    border-radius: 50%;
+    top: 49%;
+    right: -5px;
+    z-index: 2;
+    width: 8px;
+    height: 8px;
+    outline: none;
+    border: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+.controls {
+    margin: 35px 14px 0px 14px;
+}
+.btn-c {
+    width: 60px;
+    height: 60px;
+    border-radius: 153px;
+    background: #e0eafc;
+    box-shadow: 10px 10px 10px #d5deef,
+        -10px -10px 10px #ebf6ff;
+    border: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.btn-c:active {
+    border-radius: 153px;
+    background: linear-gradient(145deg, #f0faff, #cad3e3);
+    box-shadow: 10px 10px 7px #d5deef,
+        -10px -10px 7px #ebf6ff;
+
+}
+.controls i {
+    font-size: 20px;
+    color: #a7a9a7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls .play-pause {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+/* ============================= play-pause button =================== */
+.play-pause i {
+    text-align: center;
+    color: #fff;
+}
+.play-pause {
+    border: none;
+    background-color: #a5c6f6;
+    background-image: var(--background-image1);
+
+}
+.play-pause:active {
+    border-radius: 153px;
+    background: linear-gradient(145deg, #a5c6f6, #4e8be6);
+    box-shadow: 10px 10px 7px #d5deef,
+        -10px -10px 7px #ebf6ff;
+}
+
+/* ========================== Image rotate ======================== */
+.rotate {
+    animation: rotation 8s infinite linear;
+    transform-origin: center;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================= Music list ============================ */
+.music-list {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: none;
+    background: white;
+    z-index: 5;
+    padding: 0px 30px;
+    border-radius: 15px;
+    background-color: #e0eafc;
+    box-shadow: rgb(213, 222, 239) 82px 50px 80px, rgb(235, 246, 255) -10px -10px 18px;
+    transition: all 0.15s ease-in-out;
+}
+.music-list.show {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+#close {
+    color: #A7A9AB;
+    font-size: 18px;
+    position: relative;
+    top: 7px;
+}
+.header .row {
+    display: flex;
+    align-items: center;
+    color: #86898c;
+    font-family: var(--font-family2);
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 12px;
+    letter-spacing: .75px;
+}
+.row p {
+    text-align: left;
+}
+.music-list .header,
+.music-list ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.header .row i {
+    cursor: default;
+}
+.music-list ul {
+    margin-top: 10px;
+    max-height:239px;
+    overflow: auto;
+}
+.music-list ul li {
+    list-style-type: none;
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #a6a7a83b;
+    padding-top: 15px;
+    color: #A7A9AB;
+    font-family: var(--font-family1);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .75px;
+    transition: all 0.15s ease-in-out;
+}
+
+.music-list ul li:last-child {
+    border-bottom: 0px;
+}
+.music-list ul li p {
+    opacity: 0.6;
+}
+ul li .audio-duration {
+    font-size: 14px;
+}
+.music-list ul::-webkit-scrollbar {
+    width: 0;
+}
+.row {
+    text-align: left;
+}
+.music-list ul li:hover {
+    color: #72a2ea;
+}
+ul li.playing {
+    color: #72a2ea;
+    pointer-events: none;
+}
+
+/* ============================= Media queries ============================ */ 
+@media (max-width:991px){
+    header h3{
+        font-size:1.3rem;
+    }
+    .name{
+        font-size: 1.2rem;
+    }
+}
+@media(min-width:992px){
+    header h3{
+        font-size: 1.2rem;
+    }
+    .name{
+        font-size: 1.1rem;
+    }
+    .wrapper{
+        height: 100vh;
+    }
+}

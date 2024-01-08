@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <!--------------------------- Font-awesome icon ------------------------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--------------------------- iconify-icon ----------------------------------->
+    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <!--------------------------- Custom CSS ------------------------------------->
+    <link rel="stylesheet" href="CSS/mplayer.css">
+</head>
+
+<body>
+    <!---------------------- Music wrapper Start -------------->
+    <div class="wrapper">
+        <div class="wrapper-play">
+            <header>
+                <button class="headbtn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <h3>Beat Buddy</h3>
+                <button class="headbtn">
+                    <iconify-icon icon="mdi:playlist-music"
+                        style="color: #86898c; position: relative; top:5px; left:2px;" width="25" height="25"
+                        id="menu-list"></iconify-icon>
+                </button>
+            </header>
+            <div class="player">
+                <div class="image-area">
+                    <img src="">
+                </div>
+                <div class="song-details">
+                    <h1 class="name"></h1>
+                    <h3 class="artists"></h3>
+                </div>
+                <div class="audio-c">
+                    <div class="progress-area">
+                        <div class="progressbar">
+                            <audio id="m-audio" src="" type="audio/mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="song-timer">
+                        <span class="current-time">0:00</span>
+                        <span class="max-duration">0:00</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="btn-c" id="prev">
+                        <i class="fa-solid fa-backward"></i>
+                    </button>
+                    <button class="play-pause btn-c">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button class="btn-c" id="next">
+                        <i class="fa-solid fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!---------------- Music List Start --------------->
+            <div class="music-list">
+                <div class="header">
+                    <div class="row">
+                        <span class="m-list">Playing now</span>
+                    </div>
+                    <i class="fa-solid fa-xmark" id="close"></i>
+
+                </div>
+                <ul></ul>
+            </div>
+            <!-------------- Music List End ------------------->
+        </div>
+    </div>
+    <!----------------------- Music wrapper End ---------------->
+
+
+    <!---------------------- jqyery cdn ----------------->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!---------------------- Custom JS ------------------>
+    <script src="JS/mplayer.js"></script>
+</body>
+
+</html>
